@@ -13,6 +13,9 @@ OBJS_DIR = .objs
 OBJ =	$(addprefix $(OBJS_DIR)/, $(FILES:.c=.o))
 
 FILES = main.c								\
+		init_variable.c						\
+		parsing.c							\
+		exit.c								\
 
 all: libs $(NAME)
 
