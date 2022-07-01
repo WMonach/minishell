@@ -16,6 +16,7 @@ FILES = main.c								\
 		init_variable.c						\
 		parsing.c							\
 		exit.c								\
+		path.c								\
 
 all: libs $(NAME)
 
@@ -23,7 +24,7 @@ libs:
 	$(MAKE) -C $(LIBSDIR)
 
 $(NAME): $(OBJ) $(LIBSDIR)libft.a
-	$(CC) $(SFLAG) $(OBJ) $(LIBSDIR)libft.a -o $(NAME)
+	$(CC) $(SFLAG) $(OBJ) -lreadline $(LIBSDIR)libft.a -o $(NAME)
 	
 $(OBJS_DIR)/%.o:		%.c minishell.h ${LIBSDIR}libft.h ${LIBSDIR}libft.a Makefile
 				mkdir -p $(dir $@)
